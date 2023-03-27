@@ -1,0 +1,31 @@
+<style>
+.field{
+    width: 40%;
+    padding: 8px 8px;
+    margin: 4px 0;
+    box-sizing: border-box;
+  }
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  }
+</style>
+<div style="text-align: center;">
+    <h2 style="text-align: center;">Edit Item</h2>
+    <form>
+      <div>
+        <label for="id">ID</label>
+        <input type="number" class="field" name="id" [(ngModel)] = "infoForm.id" id="id" />
+      </div>
+      <div>
+        <label for="title">title</label>
+        <input type="text" class="field" name="title" [(ngModel)] = "infoForm.title" id="title" />
+      </div>
+      <div>
+        <label for="name">name</label>
+        <input type="text" class="field" name="name" [(ngModel)] = "infoForm.name" id="name" />
+      </div>
+      <button style="background-color: coral;width: 10%;" type="button" (click)="update()">Update</button>
+    </form>
+</div>

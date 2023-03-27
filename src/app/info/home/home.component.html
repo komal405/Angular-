@@ -1,0 +1,44 @@
+<style>
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+    table, th, td {
+        border: 1px solid;
+        text-align: center;
+    }
+    th{
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<div>
+    <div >
+        <div >
+          <h2 style="text-align: center;">
+            <a routerLink="/info/create">Create</a>
+          </h2>
+        </div>
+    <table class="center">
+      <thead style="height: 60px">
+        <tr style="height: 30px">
+          <th>Id</th>
+          <th>Title</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allInfo">
+          <td scope="row">{{ item.id }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.name }}</td>
+          <td>
+            <button><a [routerLink]="['/info/edit', item.id]">Edit</a></button> |
+            <button type="button" (click)="idDelete(item.id)">Delete</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
